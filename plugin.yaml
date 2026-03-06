@@ -1,0 +1,19 @@
+id: lumide_go
+name: 'Go'
+description: 'Go language support for Lumide IDE via gopls.'
+entry_point: 'bin/main.dart'
+
+activation_events:
+  - 'workspaceContains:go.mod'
+  - 'workspaceContains:*.go'
+
+permissions:
+  - shell:
+      - gopls
+      - go
+
+configuration:
+  - key: go-lsp.path
+    type: filePath
+    title: 'Gopls Executable Path'
+    description: 'Path to the gopls executable. If empty, the system PATH will be used.'
